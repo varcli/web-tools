@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88" role="img" aria-labelledby="title">
+  <title id="title">Web-Tools</title>
+  <defs>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#08baf3" />
+      <stop offset="1" stop-color="#1675e9" />
+    </linearGradient>
+  </defs>
+  <rect width="88" height="88" rx="15" fill="url(#brand)" />
+  <path d="M20 23h48v10H49v39H39V33H20z" fill="#fff" />
+</svg>
