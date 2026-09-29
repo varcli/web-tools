@@ -1,0 +1,26 @@
+.time-tools .el-tabs__header { margin-bottom: 20px; }
+.time-tools .el-tabs__content { overflow: visible; }
+.time-tools__live { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 18px; color: var(--app-text-muted); font-size: 14px; }
+.time-tools__live strong { color: var(--el-color-primary); font: 600 17px/1.5 Consolas, 'Microsoft YaHei', monospace; }
+.time-tools__card { min-width: 0; padding: 18px; border: 1px solid var(--app-border); border-radius: 12px; background: var(--app-surface-muted); color: var(--app-text); }
+.time-tools__input-row { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.time-tools__input-row > .el-input, .time-tools__input-row > .el-date-editor { flex: 1; min-width: 0; }
+.time-tools__input-row > .el-button { flex: none; margin: 0; }
+.time-tools__controls, .time-tools__presets { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; }
+.time-tools__controls .el-button, .time-tools__presets .el-button { margin: 0; }
+.time-tools__presets { padding-top: 14px; border-top: 1px solid var(--app-border); }
+.time-tools__muted { color: var(--app-text-muted); font-size: 12px; line-height: 1.6; }
+.time-tools__result-list { margin-top: 12px; }
+.time-tools__result { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 10px 0; border-bottom: 1px solid var(--app-border); font-size: 13px; }
+.time-tools__result:last-child { border-bottom: 0; }
+.time-tools__result span { color: var(--app-text-muted); }
+.time-tools__result strong { margin-left: auto; color: var(--app-text); font-weight: 600; overflow-wrap: anywhere; }
+.time-tools__result .el-button { margin: 0; }
+.time-tools__swap { text-align: center; margin: 16px 0; }
+.time-tools__section-label { margin-top: 22px; }
+.time-tools__amount, .time-tools__zone-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
+.time-tools__highlight { display: flex; flex-direction: column; align-items: flex-start; gap: 9px; padding: 18px; border: 1px solid var(--el-color-primary-light-5); border-radius: 10px; background: var(--el-color-primary-light-9); }
+.time-tools__highlight span { color: var(--app-text-muted); font-size: 13px; }
+.time-tools__highlight strong { color: var(--app-text); font-size: 19px; overflow-wrap: anywhere; }
+.time-tools__swap-button { margin-top: 16px; }
+@media (max-width: 640px) { .time-tools__card { padding: 14px; } .time-tools__amount, .time-tools__zone-grid { grid-template-columns: 1fr; } .time-tools__result strong { margin-left: 0; } }

@@ -1,0 +1,181 @@
+<script setup lang="ts">
+import '../workbench.css'
+import { ref, onMounted } from 'vue'
+import ToolDetail from '@/components/Layout/ToolDetail/ToolDetail.vue'
+import { copy } from '@/utils/string'
+import figlet from 'figlet';
+figlet.defaults({ fontPath: '//unpkg.com/figlet@1.6.0/fonts/' });
+
+const content = ref('Web-Tools')
+const contentRes = ref('')
+const fontStyle = ref('Big')
+const options = ref([
+  {
+    value: 'Alpha',
+    label: 'Alpha',
+  },
+  {
+    value: 'Avatar',
+    label: 'Avatar',
+  },
+  {
+    value: 'Banner',
+    label: 'Banner',
+  },
+  {
+    value: 'Banner3-D',
+    label: 'Banner3-D',
+  },
+  {
+    value: 'Basic',
+    label: 'Basic',
+  },
+  {
+    value: 'Bear',
+    label: 'Bear',
+  },
+  {
+    value: 'Big Money-ne',
+    label: 'Big Money-ne',
+  },
+  {
+    value: 'Big',
+    label: 'Big',
+  },
+  {
+    value: 'Block',
+    label: 'Block',
+  },
+  {
+    value: 'Epic',
+    label: 'Epic',
+  },
+  {
+    value: 'Ghost',
+    label: 'Ghost',
+  },
+  {
+    value: 'Knob',
+    label: 'Knob',
+  },
+  {
+    value: 'Linux',
+    label: 'Linux',
+  },
+  {
+    value: 'Mini',
+    label: 'Mini',
+  },
+  {
+    value: 'Mirror',
+    label: 'Mirror',
+  },
+  {
+    value: 'Peaks',
+    label: 'Peaks',
+  },
+  {
+    value: 'Slant',
+    label: 'Slant',
+  },
+  {
+    value: 'Small',
+    label: 'Small',
+  },
+  {
+    value: 'Stellar',
+    label: 'Stellar',
+  },
+  {
+    value: 'Thin',
+    label: 'Thin',
+  },
+  {
+    value: 'Wow',
+    label: 'Wow',
+  },
+])
+
+const gen = () => {
+  figlet(content.value, 
+  {
+    font: fontStyle.value,
+    width: 120,
+    horizontalLayout: "default",
+    verticalLayout: "default",
+    whitespaceBreak: true,
+  }, 
+  function (err, data) {
+    if (err) {
+      console.log(';----', err)
+      return;
+    }
+    contentRes.value = data ?? ''
+  })
+}
+
+//清空输入框
+const clear = () => {
+  content.value = ''
+  contentRes.value = ''
+}
+
+onMounted(() => {
+  gen()
+})
+
+</script>
+
+<template>
+  <div class="tool-workbench">
+    
+
+    <section class="tool-workbench__panel">
+      <div class="tool-workbench__toolbar">
+          <div class="flex items-center mr-3 w-36">
+            <div class="w-10">
+              <el-text class="">风格</el-text>
+            </div>
+            <el-select
+              v-model="fontStyle"
+              size="default"
+              class="ml-2"
+              @change="gen"
+            >
+              <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              />
+            </el-select>
+          </div>
+          
+          <el-button type="primary" @click="gen()">生成</el-button>
+          <el-button @click="clear">清空</el-button>
+      </div>
+      <div class="tool-workbench__editor">
+        <label class="tool-workbench__label">输入内容</label>
+        <el-input v-model="content" :rows="4" type="textarea" placeholder="请输入内容"></el-input>
+      </div>
+
+      <div class="tool-workbench__result">
+        <div class="tool-workbench__toolbar"><span class="tool-workbench__label">生成结果</span><span class="tool-workbench__toolbar-spacer"></span><el-button :disabled="!contentRes" @click="copy(contentRes)">复制结果</el-button></div>
+        <pre class="tool-workbench__output" tabindex="0"><code>{{ contentRes }}</code></pre>
+      </div>
+
+    </section>
+  
+    <!-- desc -->
+    <ToolDetail title="描述">
+      <el-text>
+        好用的ASCII字形生成器，输入框中输入需要生成的字母；提供多种风格选择
+      </el-text> 
+    </ToolDetail>
+  
+  </div>
+</template>
+
+<style scoped>
+
+</style>

@@ -1,0 +1,24 @@
+.tool-workbench { display: flex; flex: 1; flex-direction: column; min-width: 0; margin-top: 12px; }
+.tool-workbench__panel { min-width: 0; padding: 20px; border: 1px solid var(--app-border); border-radius: 16px; background: var(--app-surface); color: var(--app-text); }
+.tool-workbench__row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 16px; }
+.tool-workbench__row .el-button + .el-button { margin-left: 0; }
+.tool-workbench__toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; min-width: 0; margin-bottom: 12px; }
+.tool-workbench__toolbar .el-button + .el-button { margin-left: 0; }
+.tool-workbench__toolbar .tool-workbench__label { margin: 0; }
+.tool-workbench__toolbar-spacer { flex: 1 1 auto; }
+.tool-workbench__editor { min-width: 0; }
+.tool-workbench__result { min-width: 0; margin-top: 18px; }
+.tool-workbench__result > .tool-workbench__toolbar { margin-bottom: 9px; }
+.tool-workbench__stack { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.tool-workbench__stack > * { min-width: 0; }
+.tool-workbench__split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(200px, 28%); gap: 20px; align-items: start; min-width: 0; }
+.tool-workbench__split > * { min-width: 0; }
+.tool-workbench__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.tool-workbench__field { min-width: 0; }
+.tool-workbench__label { display: block; margin: 0 0 9px; color: var(--app-text); font-size: 14px; font-weight: 600; }
+.tool-workbench__hint { margin: 8px 0 0; color: var(--app-text-muted); font-size: 12px; }
+.tool-workbench__error { margin: 14px 0 0; padding: 10px 12px; border-radius: 8px; background: var(--el-color-danger-light-9); color: var(--el-color-danger); font-size: 13px; white-space: pre-wrap; }
+.tool-workbench__output { width: 100%; box-sizing: border-box; min-height: 320px; margin: 0; padding: 12px; border: 1px solid var(--app-border); border-radius: 10px; background: var(--app-surface-muted); color: var(--app-text); font: 13px/1.6 Consolas, 'Microsoft YaHei', monospace; white-space: pre-wrap; overflow-wrap: anywhere; overflow: auto; }
+.tool-workbench__options { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 16px; color: var(--app-text); }
+.tool-workbench__options .el-select { width: 140px; }
+@media (max-width: 900px) { .tool-workbench__grid, .tool-workbench__split { grid-template-columns: 1fr; } .tool-workbench__panel { padding: 16px; } }

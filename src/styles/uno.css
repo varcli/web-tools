@@ -1,0 +1,130 @@
+/* UnoCSS 通过 main.ts 中引入的 virtual:uno.css 按需注入，
+   此文件仅保留全局 CSS 变量 */
+
+:root{
+  --base-gray: #f5f5fb;
+  --base-black: #444;
+  --el-color-primary: #3478f6;
+  --el-color-primary-rgb: 52, 120, 246;
+  --el-color-primary-light-3: #71a1f9;
+  --el-color-primary-light-5: #99bcfb;
+  --el-color-primary-light-7: #c2d7fd;
+  --el-color-primary-light-8: #d6e4fd;
+  --el-color-primary-light-9: #ebf2fe;
+  --el-color-primary-dark-2: #2a60c5;
+  --el-border-radius-base: 10px;
+  --el-border-radius-small: 8px;
+  --app-bg: #f5f8fe;
+  --app-surface: #ffffff;
+  --app-surface-muted: #f1f5fb;
+  --app-text: #14213a;
+  --app-text-muted: #647086;
+  --app-border: #e3ebf6;
+  --app-hero-bg: radial-gradient(circle at 78% 8%, #e7e9ff 0, transparent 40%), linear-gradient(115deg, #e9f5ff 0%, #f1f6ff 47%, #c9d8ff 100%);
+}
+
+html.dark {
+  color-scheme: dark;
+  --app-bg: #151e2e;
+  --app-surface: #202d42;
+  --app-surface-muted: #27364c;
+  --app-text: #edf3ff;
+  --app-text-muted: #aabbd4;
+  --app-border: #3b4b64;
+  --app-hero-bg: linear-gradient(115deg, #263954, #33466f 72%, #484777);
+  --el-color-primary: #6a9cff;
+  --el-color-primary-rgb: 106, 156, 255;
+  --el-color-primary-light-3: #5889e6;
+  --el-color-primary-light-5: #426bb2;
+  --el-color-primary-light-7: #334f79;
+  --el-color-primary-light-8: #2b4161;
+  --el-color-primary-light-9: #263850;
+  --el-color-primary-dark-2: #8bb2ff;
+  --el-bg-color: #202d42;
+  --el-bg-color-page: #151e2e;
+  --el-bg-color-overlay: #27364c;
+  --el-fill-color: #27364c;
+  --el-fill-color-light: #2d3d55;
+  --el-fill-color-blank: #202d42;
+  --el-border-color: #3b4b64;
+  --el-border-color-light: #34445c;
+  --el-text-color-primary: #edf3ff;
+  --el-text-color-regular: #cfdaed;
+  --el-text-color-secondary: #aabbd4;
+  --w-e-textarea-bg-color: #202d42;
+  --w-e-textarea-color: #edf3ff;
+  --w-e-textarea-border-color: #3b4b64;
+  --w-e-textarea-slight-border-color: #34445c;
+  --w-e-textarea-slight-color: #aabbd4;
+  --w-e-textarea-slight-bg-color: #27364c;
+  --w-e-toolbar-color: #cfdaed;
+  --w-e-toolbar-bg-color: #202d42;
+  --w-e-toolbar-active-color: #edf3ff;
+  --w-e-toolbar-active-bg-color: #33445e;
+  --w-e-toolbar-disabled-color: #8292aa;
+  --w-e-toolbar-border-color: #3b4b64;
+  --w-e-modal-button-bg-color: #27364c;
+  --w-e-modal-button-border-color: #3b4b64;
+}
+
+html.dark .bg-white { background-color: var(--app-surface) !important; }
+html.dark .bg-gray-50,
+html.dark .bg-gray-100,
+html.dark .bg-gray-200,
+html.dark .bg-slate-50,
+html.dark .bg-slate-100 { background-color: var(--app-surface-muted) !important; }
+html.dark .text-gray-500,
+html.dark .text-gray-600,
+html.dark .text-gray-700 { color: var(--app-text-muted) !important; }
+html.dark [class*="bg-[#f5f5fb]"] { background-color: var(--app-surface-muted) !important; }
+
+html.dark body :is(.calculator-display, .color-info, .color-value, .no-color, .result-item,
+  .no-result, .no-video, .test-area.ready, .stat-item, .history-list, .result-content,
+  .status-item, .wheel-center) { background-color: var(--app-surface-muted); }
+html.dark body :is(.test-area.waiting, .stat-item.draw) { background-color: #293c59; }
+html.dark body :is(.test-area.active, .stat-item.win) { background-color: #244038; }
+html.dark body :is(.test-area.completed, .stat-item.lose) { background-color: #49313a; }
+html.dark body :is(.color-section h3, .test-message, .stats-section h3, .history-section h4,
+  .result-message, .stat-value, .wheel-result, .status-value) { color: var(--app-text); }
+html.dark body :is(.no-image, .no-color, .color-label, .stat-label, .no-result, .no-video) {
+  color: var(--app-text-muted);
+}
+
+html.dark .v-md-editor,
+html.dark .v-md-textarea-editor textarea,
+html.dark .vuepress-markdown-body,
+html.dark .v-md-editor__menu {
+  background-color: var(--app-surface) !important;
+  color: var(--app-text) !important;
+}
+html.dark .v-md-editor__toolbar,
+html.dark .v-md-editor__toolbar-divider { border-color: var(--app-border); }
+html.dark .v-md-editor__toolbar-item,
+html.dark .v-md-editor__menu-item { color: var(--app-text-muted); }
+html.dark .v-md-editor__toolbar-item:hover,
+html.dark .v-md-editor__menu-item:hover { background-color: var(--app-surface-muted); color: var(--app-text); }
+html.dark .vuepress-markdown-body :is(h1, h2, h3, h4, h5, h6) { color: var(--app-text); }
+
+/* Keep CodeMirror fields consistent with Element Plus inputs. */
+.cm-editor {
+  border: 1px solid var(--el-border-color);
+  border-radius: var(--el-border-radius-base);
+  overflow: hidden;
+  background: var(--el-fill-color-blank);
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.cm-editor:hover {
+  border-color: var(--el-border-color-hover);
+}
+
+.cm-editor.cm-focused {
+  outline: none;
+  border-color: var(--el-color-primary);
+  box-shadow: 0 0 0 1px var(--el-color-primary);
+}
+
+html.dark .cm-editor { color: var(--app-text); background: var(--app-surface); }
+html.dark .cm-gutters { color: var(--app-text-muted); background: var(--app-surface-muted); border-color: var(--app-border); }
+html.dark .cm-activeLine,
+html.dark .cm-activeLineGutter { background: #33445e; }
