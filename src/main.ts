@@ -20,17 +20,20 @@ import pinia from './store'
 import { setupMdEditor } from './plugins/v-md-editor'
 //default-passive-events
 import 'default-passive-events'
+import { applyThemeColor, readStoredColor } from './utils/theme'
 
 
 const app = createApp(App)
 try {
-  if (localStorage.getItem('web-tools-theme') === 'dark') {
+  const storedTheme = localStorage.getItem('web-tools-theme')
+  if (storedTheme === 'dark' || (storedTheme === null && window.matchMedia?.('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark')
     document.body.classList.add('dark-theme')
   }
 } catch {
   // Theme preference is optional when storage is unavailable.
 }
+applyThemeColor(readStoredColor())
 //安装仓库
 app.use(pinia)
 app.use(router)

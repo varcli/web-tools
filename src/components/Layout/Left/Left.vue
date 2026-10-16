@@ -4,6 +4,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { House, InfoFilled, Connection, Document, Reading, Picture, VideoCamera, Headset, DataAnalysis, Switch, Box } from '@element-plus/icons-vue'
 import { useToolsStore } from '@/store/modules/tools'
 import { useComponentStore } from '@/store/modules/component'
+import Logo from '@/components/Layout/Logo/Logo.vue'
 
 const router = useRouter()
 const route = useRoute()
@@ -47,8 +48,8 @@ watch(() => route.path, async () => { await nextTick(); updateActiveCategory() }
 
 <template>
   <aside class="sidebar">
-    <router-link to="/" class="brand" @click="closeDrawer">
-      <span class="brand-mark">T</span>
+    <router-link to="/" class="brand" @click="closeDrawer" aria-label="返回首页">
+      <span class="brand-mark"><Logo /></span>
     </router-link>
     <el-scrollbar class="sidebar-scroll" always>
     <nav class="side-nav" aria-label="主导航">
@@ -74,7 +75,7 @@ watch(() => route.path, async () => { await nextTick(); updateActiveCategory() }
 <style scoped>
 .sidebar { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; overflow: hidden; background: var(--app-surface); border-right: 1px solid var(--app-border); color: var(--app-text-muted); }
 .brand { height: 76px; flex: none; display: flex; align-items: center; justify-content: center; color: #0c1529; text-decoration: none; }
-.brand-mark { display: grid; place-items: center; width: 44px; height: 44px; flex: none; border-radius: 7px; color: white; font-size: 34px; font-weight: 800; background: linear-gradient(140deg,#08baf3,#1675e9); box-shadow: 0 5px 12px #a4d9ff; }
+.brand-mark { display: grid; place-items: center; width: 40px; height: 40px; flex: none; color: var(--el-color-primary); }
 .sidebar-scroll { flex: 1; min-height: 0; }
 .sidebar-scroll :deep(.el-scrollbar__bar.is-vertical) { right: 3px; width: 5px; opacity: 0; transition: opacity .2s ease; }
 .sidebar-scroll:hover :deep(.el-scrollbar__bar.is-vertical) { opacity: 1; }

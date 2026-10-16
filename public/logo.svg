@@ -2,10 +2,11 @@
   <title id="title">Web-Tools</title>
   <defs>
     <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#08baf3" />
-      <stop offset="1" stop-color="#1675e9" />
+      <stop offset="0" stop-color="#3478f6" />
+      <stop offset="1" stop-color="#2a60c5" />
     </linearGradient>
   </defs>
-  <rect width="88" height="88" rx="15" fill="url(#brand)" />
-  <path d="M20 23h48v10H49v39H39V33H20z" fill="#fff" />
+  <path d="M37.14 11.72L50.86 11.72L53.95 19.98L61.97 16.32L71.68 26.03L68.02 34.05L76.28 37.14L76.28 50.86L68.02 53.95L71.68 61.97L61.97 71.68L53.95 68.02L50.86 76.28L37.14 76.28L34.05 68.02L26.03 71.68L16.32 61.97L19.98 53.95L11.72 50.86L11.72 37.14L19.98 34.05L16.32 26.03L26.03 16.32L34.05 19.98Z" fill="url(#brand)" />
+  <circle cx="44" cy="44" r="19" fill="#ffffff" />
+  <path d="M38 37 L31 44 L38 51 M50 37 L57 44 L50 51 M47 34.5 L41 53.5" fill="none" stroke="url(#brand)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
 </svg>
