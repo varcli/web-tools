@@ -161,9 +161,6 @@ body {
 .dark-theme .sidebar .nav-item {
   color: var(--app-text-muted);
 }
-.dark-theme .sidebar .nav-item.active {
-  color: #fff;
-}
 .dark-theme .sidebar .nav-item.selected {
   color: var(--el-color-primary);
 }

@@ -6,7 +6,7 @@ const currentYear: number = new Date().getFullYear();
 
 <template>
   <div class="w-full rounded-2xl z-10 p-5 text-center tech-footer">
-    <el-text>{{ appDesc }}  © {{ currentYear }} <a href="https://github.com/varcli/web-tools" target="_blank" class="text-blue-700 tech-link">Web-Tools</a></el-text>
+    <el-text>{{ appDesc }}  © {{ currentYear }} <a href="https://github.com/varcli/web-tools" target="_blank" class="tech-link">Web-Tools</a></el-text>
   </div>
 </template>
 
@@ -20,11 +20,12 @@ const currentYear: number = new Date().getFullYear();
 
 /* 简约链接 */
 .tech-link {
-  transition: all 0.2s ease;
+  color: var(--el-color-primary);
+  transition: color 0.2s ease;
   text-decoration: none;
 }
 
 .tech-link:hover {
-  color: var(--el-color-primary);
+  color: var(--el-color-primary-dark-2);
 }
 </style>

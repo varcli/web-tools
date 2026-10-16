@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { Brush, Download, Fold, Moon, Search, Sunny } from '@element-plus/icons-vue'
+import { Download, Fold, Moon, Search, Sunny } from '@element-plus/icons-vue'
 import { useToolsStore } from '@/store/modules/tools'
 import { useComponentStore } from '@/store/modules/component'
 import type { ToolsInfo } from '@/components/Tools/tools.type'
@@ -78,7 +78,14 @@ const toggleTheme = () => {
     <div class="topbar-actions">
       <el-popover v-model:visible="colorPanel" placement="bottom" :width="224" trigger="click" popper-class="theme-color-popover">
         <template #reference>
-          <button class="icon-button color-button" type="button" aria-label="切换主题色" title="切换主题色"><el-icon><Brush /></el-icon></button>
+          <button class="icon-button color-button" type="button" aria-label="切换主题色" title="切换主题色">
+            <svg class="color-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3a9 9 0 1 0 0 18c1.2 0 1.8-.8 1.8-1.6 0-.5-.2-.8-.5-1.1-.3-.3-.5-.7-.5-1.1 0-.9.7-1.6 1.6-1.6h1.7A4.9 4.9 0 0 0 21 11c0-1.5-.6-2.9-1.6-4" />
+              <circle cx="7.6" cy="11.2" r="1.25" fill="currentColor" stroke="none" />
+              <circle cx="10.2" cy="7.4" r="1.25" fill="currentColor" stroke="none" />
+              <circle cx="14.6" cy="7.6" r="1.25" fill="currentColor" stroke="none" />
+            </svg>
+          </button>
         </template>
         <div class="theme-color-panel">
           <p class="theme-color-panel__title">主题色</p>
@@ -110,6 +117,7 @@ const toggleTheme = () => {
 .tool-search { width: 420px; min-width: 0; flex: 0 1 420px; }.tool-search :deep(.el-select__wrapper) { min-height: 42px; border-radius: 13px; padding-left: 15px; background: var(--app-surface); box-shadow: 0 4px 16px rgba(82,112,171,.09); border: 1px solid var(--app-border); }.tool-search :deep(.el-select__prefix) { color: var(--app-text-muted); font-size: 18px; }
 .topbar-actions { display: flex; align-items: center; gap: 8px; flex: none; margin-left: auto; }
 .color-button { color: var(--el-color-primary); }
+.color-icon { display: block; width: 22px; height: 22px; }
 .theme-color-panel__title { margin: 0 0 10px; color: var(--app-text-muted); font-size: 12px; font-weight: 600; }
 .theme-color-panel__swatches { display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; }
 .theme-swatch { width: 100%; aspect-ratio: 1; padding: 0; border: 2px solid transparent; border-radius: 8px; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease; }

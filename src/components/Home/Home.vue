@@ -66,7 +66,7 @@ watch(() => route.query.value, scrollToSection)
 .tool-section { margin-top: 30px; scroll-margin-top: 88px; }
 .section-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
 .section-heading h2 { position: relative; margin: 0 0 3px; padding-left: 22px; color: var(--app-text); font-size: 23px; font-weight: 750; }
-.section-heading h2::before { content: ''; position: absolute; left: 0; top: 2px; width: 8px; height: 34px; border-radius: 6px; background: linear-gradient(#2998ff, #356bfa); }
+.section-heading h2::before { content: ''; position: absolute; left: 0; top: 2px; width: 8px; height: 34px; border-radius: 6px; background: linear-gradient(var(--el-color-primary), var(--el-color-primary-dark-2)); }
 .section-heading p { margin: 0; padding-left: 22px; color: var(--app-text-muted); font-size: 14px; }
 .tool-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
 .tool-card { height: 134px; box-sizing: border-box; display: flex; align-items: flex-start; gap: 16px; padding: 20px; border: 1px solid var(--app-border); border-radius: 18px; background: var(--app-surface); box-shadow: 0 10px 30px rgba(76,107,157,.055); text-decoration: none; transition: transform .2s, box-shadow .2s, border-color .2s; }

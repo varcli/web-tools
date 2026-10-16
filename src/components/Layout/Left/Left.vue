@@ -53,7 +53,7 @@ watch(() => route.path, async () => { await nextTick(); updateActiveCategory() }
     </router-link>
     <el-scrollbar class="sidebar-scroll" always>
     <nav class="side-nav" aria-label="主导航">
-      <router-link to="/" class="nav-item home-link" :class="{ active: route.path === '/' && !activeCategory }" @click="closeDrawer">
+      <router-link to="/" class="nav-item home-link" @click="closeDrawer">
         <el-icon><House /></el-icon><span>首页</span>
       </router-link>
       <div class="category-list">
@@ -84,7 +84,7 @@ watch(() => route.path, async () => { await nextTick(); updateActiveCategory() }
 .side-nav { padding: 14px 12px 24px; }
 .nav-item { width: 100%; height: 48px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; padding: 0 13px; border: 0; border-radius: 15px; background: transparent; color: var(--app-text-muted); font: inherit; font-size: 15px; text-align: left; text-decoration: none; cursor: pointer; }
 .nav-item .el-icon { font-size: 20px; flex: none; }.nav-item span:nth-child(2) { flex: 1; }
-.nav-item:hover { color: var(--el-color-primary); background: var(--el-color-primary-light-9); }.nav-item.active { color: white; font-weight: 700; background: var(--el-color-primary); box-shadow: 0 7px 17px rgba(52,120,246,.22); }
+.nav-item:hover { color: var(--el-color-primary); background: var(--el-color-primary-light-9); }
 .category-list { margin-top: 20px; }.category-link { margin: 4px 0; }.category-link.selected { color: var(--el-color-primary); background: var(--el-color-primary-light-9); font-weight: 650; }
 .side-divider { height: 1px; background: var(--app-border); margin: 20px 6px; }.about-link { margin-top: 8px; }
 </style>
